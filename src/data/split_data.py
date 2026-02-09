@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 import os
 
-def split_data(input_path, output_dir, target=None, test_size=0.2, random_state=42):
+def split_data(input_path, output_dir, target=None, test_size=0.2, random_state=123):
     """
     Permet de splitter les données en dataset d'entraînement et de test.
     """

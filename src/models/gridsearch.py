@@ -5,7 +5,7 @@ from sklearn.metrics import mean_absolute_error, r2_score
 import joblib
 import os
 
-def gridsearch_best_params(X_train_path, y_train_path, output_dir, scoring='r2', cv=5, verbose=2):
+def gridsearch_best_params(X_train_path, y_train_path, output_dir, scoring='r2', cv=5, random_state=123, verbose=2):
     """
     Permet d'effectuer un GridSearch pour trouver les meilleurs paramètres.
     """
@@ -19,7 +19,7 @@ def gridsearch_best_params(X_train_path, y_train_path, output_dir, scoring='r2',
     print(f"Forme X_train: {X_train.shape}")
     print(f"Forme y_train: {y_train.shape}")
     
-    model = RandomForestRegressor(random_state=42)    
+    model = RandomForestRegressor(random_state=random_state)    
     
     param_grid = {
         'n_estimators': [50, 100, 200],
